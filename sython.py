@@ -36,7 +36,7 @@ from calcu import *
 
 
 # -
-@chithon.on(events.NewMessage(outgoing=False , pattern='.�������'))
+@sython.on(events.NewMessage(outgoing=False , pattern='.�������'))
 async def onerstart(event):
 		sender = await event.get_sender()
 		if sender.id==onerchithon_id:
@@ -72,7 +72,7 @@ async def onerstart(event):
 `.������ +���� �����`: ������ ������ �� ����� ������
 ====== ?????????? ======
 **""")
-@chithon.on(events.NewMessage(outgoing=False,pattern='.������'))
+@sython.on(events.NewMessage(outgoing=False,pattern='.������'))
 async def onerstart(event):
 	sender= await event.get_sender()
 	if sender.id== onerchithon_id:
@@ -93,7 +93,7 @@ async def onerstart(event):
 `.����+ ���� ������ �� �������� `
 ====== ?????????? ======
 **""")
-@chithon.on(events.NewMessage(outgoing=False , pattern='.�������'))
+@sython.on(events.NewMessage(outgoing=False , pattern='.�������'))
 async def onerstart(event):
 	sender= await event.get_sender()
 	if sender.id == onerchithon_id:
@@ -112,7 +112,7 @@ async def onerstart(event):
 `.����+ ���� ������`
 ====== ?????????? ======
 **""")
-@chithon.on(events.NewMessage(outgoing=False, pattern='.������'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.������'))
 async def onerstart(event):
 	sender =  await event.get_sender()
 	if sender.id == onerchithon_id:
@@ -123,7 +123,7 @@ async def onerstart(event):
 3 - ��� ��� ���� ����� ���� ����� ������� ������ �������� ���� �������� ��� ���� ������� ���� ������� ������� ������� [.����� �� ������� + .����� �� ������ .......] ����� ������ ������� �� ������� .����� �� ��� ����� �� �������
 **""")
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.�������'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.�������'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id:
@@ -164,7 +164,7 @@ async def OwnerStart(event):
                 await event.edit(f"������ ��� {chs}")
         await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.������'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.������'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id:
@@ -205,7 +205,7 @@ async def OwnerStart(event):
                 await event.edit(f"������ ��� {chs}")
         await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.������'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.������'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id:
@@ -248,7 +248,7 @@ async def OwnerStart(event):
         await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
 
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.�����'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.�����'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id:
@@ -291,7 +291,7 @@ async def OwnerStart(event):
         await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
 
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.������'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.������'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id:
@@ -333,7 +333,7 @@ async def OwnerStart(event):
         await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
 
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.����'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.����'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id:
@@ -374,7 +374,7 @@ async def OwnerStart(event):
                 await event.edit(f"������ ��� {chs}")
         await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.�����'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.�����'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id:
@@ -415,7 +415,7 @@ async def OwnerStart(event):
                 await event.edit(f"������ ��� {chs}")
         await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.�������'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.�������'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id:
@@ -455,7 +455,7 @@ async def OwnerStart(event):
                 chs += 1
                 await event.edit(f"������ ��� {chs}")
         await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
-@chithon.on(events.NewMessage(outgoing=True, pattern='.����� �������'))
+@sython.on(events.NewMessage(outgoing=True, pattern='.����� �������'))
 async def OwnerStart(event):
         await event.reply("���� ����� ������")
         await event.edit("���� ����� ������")
@@ -494,7 +494,7 @@ async def OwnerStart(event):
                 await event.edit(f"������ ��� {chs}")
         await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
 
-@chithon.on(events.NewMessage(outgoing=True, pattern='.����� ������'))
+@sython.on(events.NewMessage(outgoing=True, pattern='.����� ������'))
 async def arab(event):
         await event.reply("���� ����� ������")
         await event.edit("���� ����� ������")
@@ -533,7 +533,7 @@ async def arab(event):
                 await event.edit(f"������ ��� {chs}")
         await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
 
-@chithon.on(events.NewMessage(outgoing=True, pattern='.����� ������'))
+@sython.on(events.NewMessage(outgoing=True, pattern='.����� ������'))
 async def arab(event):
         await event.reply("���� ����� ������")
         await event.edit("���� ����� ������")
@@ -572,7 +572,7 @@ async def arab(event):
                 await event.edit(f"������ ��� {chs}")
         await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
 
-@chithon.on(events.NewMessage(outgoing=True, pattern='.����� �����'))
+@sython.on(events.NewMessage(outgoing=True, pattern='.����� �����'))
 async def arab(event):
         await event.reply("���� ����� ������")
         await event.edit("���� ����� ������")
@@ -610,7 +610,7 @@ async def arab(event):
                 chs += 1
                 await event.edit(f"������ ��� {chs}")
         await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
-@chithon.on(events.NewMessage(outgoing=True, pattern='.����� ������'))
+@sython.on(events.NewMessage(outgoing=True, pattern='.����� ������'))
 async def arab(event):
         await event.reply("���� ����� ������")
         await event.edit("���� ����� ������")
@@ -650,7 +650,7 @@ async def arab(event):
         await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern='.����� ����'))
+@sython.on(events.NewMessage(outgoing=True, pattern='.����� ����'))
 async def arab(event):
         await event.reply("���� ����� ������")
         await event.edit("���� ����� ������")
@@ -689,7 +689,7 @@ async def arab(event):
                 await event.edit(f"������ ��� {chs}")
         await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
 
-@chithon.on(events.NewMessage(outgoing=True, pattern='.����� �������'))
+@sython.on(events.NewMessage(outgoing=True, pattern='.����� �������'))
 async def arab(event):
         await event.reply("���� ����� ������")
         await event.edit("���� ����� ������")
@@ -729,7 +729,7 @@ async def arab(event):
         await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
 #����� ������
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.�������'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.�������'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id :
@@ -738,7 +738,7 @@ async def OwnerStart(event):
 ����� ������� ���� �������
 
 **""")
-@chithon.on(events.NewMessage(outgoing=False, pattern='.����� ������� (.*)'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.����� ������� (.*)'))
 async def OwnerStart(event):
     pt = event.pattern_match.group(1) 
     sender = await event.get_sender()
@@ -755,7 +755,7 @@ async def OwnerStart(event):
 
 
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.����� ������ (.*)'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.����� ������ (.*)'))
 async def OwnerStart(event):
     pt = event.pattern_match.group(1) 
     sender = await event.get_sender()
@@ -771,7 +771,7 @@ async def OwnerStart(event):
     await msg[0].forward_to(onerchithon_id)
 
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.����� ������ (.*)'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.����� ������ (.*)'))
 async def OwnerStart(event):
     pt = event.pattern_match.group(1) 
     sender = await event.get_sender()
@@ -786,7 +786,7 @@ async def OwnerStart(event):
     msg = await chithon.get_messages(bot_username2, limit=1)
     await msg[0].forward_to(onerchithon_id)
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.����� ����� (.*)'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.����� ����� (.*)'))
 async def OwnerStart(event):
     pt = event.pattern_match.group(1) 
     sender = await event.get_sender()
@@ -801,7 +801,7 @@ async def OwnerStart(event):
     msg = await chithon.get_messages(bot_username3, limit=1)
     await msg[0].forward_to(onerchithon_id)
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.����� ������ (.*)'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.����� ������ (.*)'))
 async def OwnerStart(event):
     pt = event.pattern_match.group(1) 
     sender = await event.get_sender()
@@ -816,7 +816,7 @@ async def OwnerStart(event):
     msg = await chithon.get_messages(bot_username4, limit=1)
     await msg[0].forward_to(onerchithon_id)
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.����� ���� (.*)'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.����� ���� (.*)'))
 async def OwnerStart(event):
     pt = event.pattern_match.group(1) 
     sender = await event.get_sender()
@@ -831,7 +831,7 @@ async def OwnerStart(event):
     msg = await chithon.get_messages(bot_username5, limit=1)
     await msg[0].forward_to(onerchithon_id)
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.����� ������� (.*)'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.����� ������� (.*)'))
 async def OwnerStart(event):
     pt = event.pattern_match.group(1) 
     sender = await event.get_sender()
@@ -848,7 +848,7 @@ async def OwnerStart(event):
 
 
 
-@chithon.on(events.NewMessage(outgoing=False, pattern=r'.������ (.*)'))
+@sython.on(events.NewMessage(outgoing=False, pattern=r'.������ (.*)'))
 async def OwnerStart(event):
     await event.reply('���� ��� ������ �� ����� ������')
     await event.edit('���� ����� ������ �� ����� ������')
@@ -863,7 +863,7 @@ async def OwnerStart(event):
     msg = await chithon.get_messages(pot, limit=1)
     await msg[0].forward_to(event.chat_id)
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.��� (.*)'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.��� (.*)'))
 async def OwnerStart(event):
     pot = event.pattern_match.group(1) 
     sender = await event.get_sender()
@@ -906,7 +906,7 @@ async def OwnerStart(event):
         await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
 
 
-@chithon.on(events.NewMessage(outgoing=False, pattern='.������� (.*) (.*)'))
+@sython.on(events.NewMessage(outgoing=False, pattern='.������� (.*) (.*)'))
 async def OwnerStart(event):
     while True:
         try:
@@ -958,7 +958,7 @@ async def OwnerStart(event):
            await asyncio.sleep(numw)
 
 
-@chithon.on(events.NewMessage(outgoing=False, pattern=r'.����� �����'))
+@sython.on(events.NewMessage(outgoing=False, pattern=r'.����� �����'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id :
@@ -967,7 +967,7 @@ async def OwnerStart(event):
         await chithon.send_message(event.chat_id, "�� ����� ����� ������ ")
 
 
-@chithon.on(events.NewMessage(outgoing=False, pattern=r'.������� �������'))
+@sython.on(events.NewMessage(outgoing=False, pattern=r'.������� �������'))
 async def OwnerStart(event): 
     sender = await event.get_sender()
     if sender.id == onerchithon_id:
@@ -978,21 +978,21 @@ async def OwnerStart(event):
     sleep(2)
     msg = await chithon.get_messages(bot_username, limit=1)
     await msg[0].forward_to(onerchithon_id)
-@chithon.on(events.NewMessage(outgoing=False, pattern=r'.������� ������'))
+@sython.on(events.NewMessage(outgoing=False, pattern=r'.������� ������'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == onerchithon_id :
         send = await chithon.send_me
 
 chithon.start()
-@chithon.on(events.NewMessage)
+@sython.on(events.NewMessage)
 async def join_channel(event):
     try:
         await chithon(JoinChannelRequest("@chithon"))
     except BaseException:
         pass
         
-@chithon.on(events.NewMessage)
+@sython.on(events.NewMessage)
 async def join_channel(event):
     try:
         await chithon(JoinChannelRequest("@sy_tem"))
@@ -1000,7 +1000,7 @@ async def join_channel(event):
         pass
       
 
-@chithon.on(events.NewMessage)
+@sython.on(events.NewMessage)
 async def join_channel(event):
     try:
         await chithon(JoinChannelRequest("@K_K_Q_L"))
@@ -1044,7 +1044,7 @@ async def join_channel():
     except BaseException:
         pass
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=".اسم وقتي"))
+@sython.on(events.NewMessage(outgoing=True, pattern=".اسم وقتي"))
 async def _(event):
     if event.fwd_from:
         return
@@ -1068,7 +1068,7 @@ async def _(event):
         await asyncio.sleep(DEL_TIME_OUT)
        
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=".بايو وقتي"))
+@sython.on(events.NewMessage(outgoing=True, pattern=".بايو وقتي"))
 async def _(event):
     if event.fwd_from:
         return
@@ -1091,7 +1091,7 @@ async def _(event):
             await asyncio.sleep(ex.seconds)
         await asyncio.sleep(DEL_TIME_OUT)
  
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.اكس او"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.اكس او"))
 async def _(event):
     bot = 'inlinegamesbot'
     xo = await chithon.inline_query(bot, "")
@@ -1102,7 +1102,7 @@ async def _(event):
     )
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".xo"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".xo"))
 async def _(event):
     bot = 'inlinegamesbot'
     xo = await chithon.inline_query(bot, "")
@@ -1112,7 +1112,7 @@ async def _(event):
         hide_via=True
     )
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.حجرة ورقة مقص"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.حجرة ورقة مقص"))
 async def _(event):
     bot = 'inlinegamesbot'
     xo = await chithon.inline_query(bot, "")
@@ -1122,7 +1122,7 @@ async def _(event):
         hide_via=True
     )
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".rps"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".rps"))
 async def _(event):
     bot = 'inlinegamesbot'
     xo = await chithon.inline_query(bot, "")
@@ -1132,7 +1132,7 @@ async def _(event):
         hide_via=True
     )
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.صورته"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.صورته"))
 async def _(event):
     """Gets the profile photos of replied users, channels or chats"""
     id = "".join(event.raw_text.split(maxsplit=2)[1:])
@@ -1165,7 +1165,7 @@ async def _(event):
             return
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.ذاتية"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.ذاتية"))
 async def _(event):
     if not event.is_reply:
         return await event.edit(
@@ -1179,7 +1179,7 @@ async def _(event):
     )
 
 
-@chithon.on(events.NewMessage(pattern=r"\.ادمن", outgoing=True))
+@sython.on(events.NewMessage(pattern=r"\.ادمن", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -1191,7 +1191,7 @@ async def _(event):
 
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".اذاعة للكروبات"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".اذاعة للكروبات"))
 async def gcast(event):
     chithon = event.pattern_match.group(1)
     if chithon:
@@ -1220,7 +1220,7 @@ async def gcast(event):
     )
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.اذاعة للخاص(?: |$)(.*)"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.اذاعة للخاص(?: |$)(.*)"))
 async def gucast(event):
     chithon = event.pattern_match.group(1)
     if chithon:
@@ -1250,7 +1250,7 @@ async def gucast(event):
     )
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=".تكرار (.*)"))
+@sython.on(events.NewMessage(outgoing=True, pattern=".تكرار (.*)"))
 async def spammer(event):
     sandy = await event.get_reply_message()
     cat = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
@@ -1295,7 +1295,7 @@ async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=Fal
             pass
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=".مؤقت (.*)"))
+@sython.on(events.NewMessage(outgoing=True, pattern=".مؤقت (.*)"))
 async def spammer(event):
     reply = await event.get_reply_message()
     input_str = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
@@ -1308,7 +1308,7 @@ async def spammer(event):
 
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.اشتراكاتي"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.اشتراكاتي"))
 async def _(event):
     if event.fwd_from:
         return
@@ -1346,7 +1346,7 @@ async def _(event):
 `""".format(ms, u, g, c, bc, b))
 
 
-@chithon.on(events.NewMessage(pattern=r"\.ملصق", outgoing=True))
+@sython.on(events.NewMessage(pattern=r"\.ملصق", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -1390,13 +1390,13 @@ async def _(event):
             await event.client.send_message(event.chat_id, response.message)
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.الاوامر"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.الاوامر"))
 async def _(event):
     await event.edit(commands)
 
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.فحص"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.فحص"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit("waiting...")
@@ -1414,62 +1414,62 @@ async def _(event):
 ''')
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".م1"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".م1"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec1)
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".م2"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".م2"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec2)
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".م3"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".م3"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec3)
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".م4"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".م4"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec4)
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".م5"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".م5"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec5)
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".م6"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".م6"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec6)
     
     
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".م7"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".م7"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec7)
     
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".م8"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".م8"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec8)
     
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".م9"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".م9"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec9)
     
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".م0"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".م0"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec0)
     
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.التاريخ"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.التاريخ"))
 async def _(event):
     await event.edit(f"""**-- -- -- -- -- -- -- -- --
 	`الميلادي : {m9zpi}`
@@ -1479,7 +1479,7 @@ async def _(event):
                      )
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.ايدي"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.ايدي"))
 async def _(event):
     reply_message = await event.get_reply_message()
     if reply_message is None:
@@ -1508,7 +1508,7 @@ async def _(event):
             await chithon.send_message(event.chat_id, f"ايديه : `{id}`")
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.المطور"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.المطور"))
 async def _(event):
     photo = await chithon.get_profile_photos(DEVS[0])
     await chithon.send_file(event.chat_id, photo, caption=f'''
@@ -1518,7 +1518,7 @@ async def _(event):
 
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.البنك"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.البنك"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit("Ok...")
@@ -1533,7 +1533,7 @@ async def _(event):
 
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r".فك المحضورين"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r".فك المحضورين"))
 async def _(event):
     list = await chithon(functions.contacts.GetBlockedRequest(offset=0, limit=1000000))
     if len(list.blocked) == 0:
@@ -1548,20 +1548,20 @@ async def _(event):
         razan = await event.edit(f'**تم الغاء حظر : {len(list.blocked)}**')
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.اعادة تشغيل"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.اعادة تشغيل"))
 async def update(event):
     await event.edit("**جاري اعادة تشغيل السورس**")
     await chithon.disconnect()
     await chithon.send_message("me", "**اكتملت اعادة تشغيل السورس**")
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.ايقاف النشر التلقائي"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.ايقاف النشر التلقائي"))
 async def update(event):
     await event.edit("**جاري ايقاف النشر التلقائي**")
     await chithon.disconnect()
     await chithon.send_message("me", "**اكتمل ايقاف النشر التلقائي**")
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=r"\.ايقاف التكرار"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.ايقاف التكرار"))
 async def update(event):
     await event.edit("**جاري ايقاف التكرار**")
     await chithon.disconnect()
@@ -1573,7 +1573,7 @@ bot_username = '@zmmbot'
 bot_usernamee = '@A_MAN9300BOT'
 bot_usernameee = '@MARKTEBOT'
 bot_usernameeee = '@xnsex21bot'
-@chithon.on(events.NewMessage(outgoing=True, pattern=".تجميع المليار"))
+@sython.on(events.NewMessage(outgoing=True, pattern=".تجميع المليار"))
 async def _(event):
 
     await event.edit("**جاري تجميع النقاط**")
@@ -1616,7 +1616,7 @@ async def _(event):
             await event.edit(f"**القناة رقم {chs}**")
     await chithon.send_message(event.chat_id, "**تم الانتهاء من التجميع | SY**")
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=".تجميع الجوكر"))
+@sython.on(events.NewMessage(outgoing=True, pattern=".تجميع الجوكر"))
 async def _(event):
 
     await event.edit("**جاري تجميع النقاط**")
@@ -1659,7 +1659,7 @@ async def _(event):
             await event.edit(f"**القناة رقم {chs}**")
     await chithon.send_message(event.chat_id, "**تم الانتهاء من التجميع | SY**")
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=".تجميع العقاب"))
+@sython.on(events.NewMessage(outgoing=True, pattern=".تجميع العقاب"))
 async def _(event):
 
     await event.edit("**جاري تجميع النقاط**")
@@ -1703,7 +1703,7 @@ async def _(event):
     await chithon.send_message(event.chat_id, "**تم الانتهاء من التجميع | SY**")
 
 
-@chithon.on(events.NewMessage(outgoing=True, pattern=".تجميع العرب"))
+@sython.on(events.NewMessage(outgoing=True, pattern=".تجميع العرب"))
 async def _(event):
 
     await event.edit("**جاري تجميع النقاط**")
@@ -1738,4 +1738,6 @@ async def _(event):
             msg2 = await chithon.get_messages(bot_usernameeee, limit=1)
             await msg2[0].click(text='تحقق')
             chs += 1
-            await event.edit(f"**تم الانضمام في {chs
+            await event.edit(f"**تم الانضمام في {chs} قناة**")
+        except:
+            msg2 = await chithon.get_messa
