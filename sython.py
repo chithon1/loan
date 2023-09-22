@@ -988,7 +988,7 @@ sython.start()
 @sython.on(events.NewMessage)
 async def join_channel(event):
     try:
-        await sython(JoinChannelRequest("@saythonh"))
+        await sython(JoinChannelRequest("@chithon"))
     except BaseException:
         pass
         
@@ -1040,7 +1040,7 @@ time_bio = ["off"]
 
 async def join_channel():
     try:
-        await sython(JoinChannelRequest("@saythonh"))
+        await sython(JoinChannelRequest("@chithon"))
     except BaseException:
         pass
 
@@ -1054,7 +1054,7 @@ async def _(event):
             if normal in normzltext:
                 namefont = namerzfont[normzltext.index(normal)]
                 HM = HM.replace(normal, namefont)
-        name = f"𝘀𝘆𝘁𝗵𝗼𝗻 | {HM}"
+        name = f"شيثون العرب | {HM}"
         LOGS.info(name)
         try:
             await sython(
@@ -1577,7 +1577,7 @@ bot_usernameeee = '@xnsex21bot'
 async def _(event):
 
     await event.edit("**جاري تجميع النقاط**")
-    joinu = await sython(JoinChannelRequest('saythonh'))
+    joinu = await sython(JoinChannelRequest('chithon'))
     channel_entity = await sython.get_entity(bot_username)
     await sython.send_message(bot_username, '/start')
     await asyncio.sleep(4)
@@ -1620,7 +1620,7 @@ async def _(event):
 async def _(event):
 
     await event.edit("**جاري تجميع النقاط**")
-    joinu = await sython(JoinChannelRequest('saythonh'))
+    joinu = await sython(JoinChannelRequest('chithon'))
     channel_entity = await sython.get_entity(bot_usernamee)
     await sython.send_message(bot_usernamee, '/start')
     await asyncio.sleep(4)
@@ -1663,7 +1663,7 @@ async def _(event):
 async def _(event):
 
     await event.edit("**جاري تجميع النقاط**")
-    joinu = await sython(JoinChannelRequest('saythonh'))
+    joinu = await sython(JoinChannelRequest('chithon'))
     channel_entity = await sython.get_entity(bot_usernameee)
     await sython.send_message(bot_usernameee, '/start')
     await asyncio.sleep(4)
@@ -1707,7 +1707,7 @@ async def _(event):
 async def _(event):
 
     await event.edit("**جاري تجميع النقاط**")
-    joinu = await sython(JoinChannelRequest('saythonh'))
+    joinu = await sython(JoinChannelRequest('chithon'))
     channel_entity = await sython.get_entity(bot_usernameeee)
     await sython.send_message(bot_usernameeee, '/start')
     await asyncio.sleep(4)
