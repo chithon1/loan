@@ -33,956 +33,129 @@ from telethon.tl.functions.messages import ImportChatInviteRequest
 import requests
 from trans import *
 from calcu import *
-
-
-# -
-@sython.on(events.NewMessage(outgoing=False , pattern='.�������'))
-async def onerstart(event):
-		sender = await event.get_sender()
-		if sender.id==onerchithon_id:
-			order = await event.reply("""**
-
-
-? ������ ���� ����� ������� ���� �������
-====== ?????????? ======
-`.�������` :  ����� ���� ��� �������
-`.������` : ����� ���� ��� ������ 
-`.������` :  ����� ���� ��� ������ 
-`.�����` :   ����� ���� ��� �����
-`.������` :   ����� ���� ��� ������
-`.����` :   ����� ���� ��� ����
-`.�����` :   ����� ���� ��� �����
-`.�������` :   ����� ���� ��� �������
-
-
-������ : ������ ��� ������� �������� ��� ������ �� �������� ��� ������ ���� ���� ������
-????????????????????????
-`.��� + ���� �����` : ����� ���� ��� ��� ����� �� �������
-������ : ���� ����� ������� �� ����� ������ ������� ����
-????????????????????????
-`.������� +���� ����� + ��� �������` : ����� ������� 
-������ : ���� ����� ������� ������ ������� ���� 
-������ : ��� ������� �� ����� ���� ����� ������ ��� �� ������ ����� ���� 
-������ : ����� ���� ��� ������� 3600
-????????????????????????
-`.������` : �������� ��� ����� ������� ��������
-`.�������` : ������ ������ ����� ����
-`.�������` : ������ ������ ����� �������
-`.������ �������` : ������� ���� ������� ����������
-`.������ +���� �����`: ������ ������ �� ����� ������
-====== ?????????? ======
-**""")
-@sython.on(events.NewMessage(outgoing=False,pattern='.������'))
-async def onerstart(event):
-	sender= await event.get_sender()
-	if sender.id== onerchithon_id:
-		order = await event.reply("""**
-? ����� ����� ������ �������
-====== ?????????? ======
-?? - ������ ��� ����� �� ������ ���� �� ��� :
-`.��� + ���� ������ �� �����`
-????????????????????????
-?? - ������ ����� ��� ������ ���� �� ��� : 
-`.����+ ������� + ���� ������ �� �����`
-????????????????????????
-?? - ���� ������ ���� ��� �� ���� �� ��� : 
-`.��+ ��� ���� ������ + ���� �����`
-������ :  �� ����� ��� ���� ������ �� ����� 0
-????????????????????????
-?? - ���� ������ ���� ��� ���� �� ������
-`.����+ ���� ������ �� �������� `
-====== ?????????? ======
-**""")
-@sython.on(events.NewMessage(outgoing=False , pattern='.�������'))
-async def onerstart(event):
-	sender= await event.get_sender()
-	if sender.id == onerchithon_id:
-		order = await event.reply("""**
-? ����� ������� ������� 
-===== ?????????? =====
-?? - ������ ��� ��� ������ ��� ���� ������ : 
-`.����� + ���� ������ + ���� �����`
-????????????????????????
-?? - ����� ������ ����� ��� ������� ������� :
-`/������`
-?? - ���� ������ ���� �� ������ ������ :
-`.���+ ���� ������� + ���� ������`
-������ : ���� ������� ���� ���� ��� ��� ����� �� ���� �������� ��� ��� �� ��� ����� ��� ���� ������� 1 ��� ��� ��� ������ ��� ����� 2 �����  ���� ������� 
-?? - ���� ������ ����� ���� �� ������ :
-`.����+ ���� ������`
-====== ?????????? ======
-**""")
-@sython.on(events.NewMessage(outgoing=False, pattern='.������'))
-async def onerstart(event):
-	sender =  await event.get_sender()
-	if sender.id == onerchithon_id:
-		order = await event.reply("""**
-1 - ��� ��� ���� ������ ��������� �� ������� ������ ������ ������ ������� �� ���� �� ������ ������ ���� ����� �������� ���� ��� ������ ��� ������ ����� �������� ��� ������ �� ������ ����� ������� 
-2 - ��� ��� ���� ��� �������� ���� ������ ������ ���� ���� ����� ����� �� ����� ������ ����� : .������� 
-������� ����� ������ �� ����� ������ �������� �� ����� .����� ������� ��� ������� ����� ��� ��� ������� 300 �� ���� ��� ��� ���� ��� �� ������� �� ����� ������� ���� ���� ������ ��������� �� ������� ������� ��� ���� 300 �� ��� ����� ���� ���� ������ ������� ���� ���� ������ ���� �� ����� ������ ����� ������� ������ .����� ����� 
-3 - ��� ��� ���� ����� ���� ����� ������� ������ �������� ���� �������� ��� ���� ������� ���� ������� ������� ������� [.����� �� ������� + .����� �� ������ .......] ����� ������ ������� �� ������� .����� �� ��� ����� �� �������
-**""")
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.�������'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id:
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username)
-        await chithon.send_message(bot_username, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1,                                                    offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.������'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id:
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username1)
-        await chithon.send_message(bot_username1, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username1, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username1, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1,                                                    offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username1, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username1, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.������'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id:
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username2)
-        await chithon.send_message(bot_username2, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username2, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username2, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1,
-                                                    offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username2, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username2, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
-
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.�����'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id:
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username3)
-        await chithon.send_message(bot_username3, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username3, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username3, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1,
-                                                    offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username3, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username3, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
-
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.������'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id:
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username4)
-        await chithon.send_message(bot_username4, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username4, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username4, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1,                                                    offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username4,limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username4, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
-
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.����'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id:
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username5)
-        await chithon.send_message(bot_username5, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username5, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username5, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1,                                                    offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username5,limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username5, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.�����'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id:
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username6)
-        await chithon.send_message(bot_username6, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username6, limit=1)
-        await msg0[0].click(0)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username6, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1,                                                    offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username6, limit=1)
-                await msg2[0].click(1)
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username6, limit=1)
-                await msg2[0].click(2)
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.�������'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id:
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username7)
-        await chithon.send_message(bot_username7, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username7, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username7, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1,                                                    offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username7,limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username7, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
-@sython.on(events.NewMessage(outgoing=True, pattern='.����� �������'))
-async def OwnerStart(event):
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username)
-        await chithon.send_message(bot_username, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1, offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
-
-@sython.on(events.NewMessage(outgoing=True, pattern='.����� ������'))
-async def arab(event):
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username1)
-        await chithon.send_message(bot_username1, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username1, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username1, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1, offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username1, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username1, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
-
-@sython.on(events.NewMessage(outgoing=True, pattern='.����� ������'))
-async def arab(event):
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username2)
-        await chithon.send_message(bot_username2, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username2, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username2, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1, offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username2, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username2, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
-
-@sython.on(events.NewMessage(outgoing=True, pattern='.����� �����'))
-async def arab(event):
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username3)
-        await chithon.send_message(bot_username3, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username3, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username3, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1, offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username3, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username3, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
-@sython.on(events.NewMessage(outgoing=True, pattern='.����� ������'))
-async def arab(event):
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username4)
-        await chithon.send_message(bot_username4, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username4, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username4, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1, offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username4, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username4, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
-
-
-@sython.on(events.NewMessage(outgoing=True, pattern='.����� ����'))
-async def arab(event):
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username5)
-        await chithon.send_message(bot_username5, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username5, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username5, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1, offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username5, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username5, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
-
-@sython.on(events.NewMessage(outgoing=True, pattern='.����� �������'))
-async def arab(event):
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(bot_username7)
-        await chithon.send_message(bot_username7, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(bot_username7, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(bot_username7, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1, offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await shahm1.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(bot_username7, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(bot_username7, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH\n��� ������ ��������: {chs}")
-#����� ������
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.�������'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-        order = await event.reply("""**����� �� �� ��� ����� ������
-������ �� ��� ������� ���� (.����� �������)
-����� ������� ���� �������
-
-**""")
-@sython.on(events.NewMessage(outgoing=False, pattern='.����� ������� (.*)'))
-async def OwnerStart(event):
-    pt = event.pattern_match.group(1) 
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-     send = await chithon.send_message(bot_username, '/start')
-     sleep(2)
-    msg1 = await chithon.get_messages(bot_username, limit=1)
-    await msg1[0].click(3)
-    sleep(4)
-    await chithon.send_message(bot_username, pt)
-    sleep(4)
-    msg = await chithon.get_messages(bot_username, limit=1)
-    await msg[0].forward_to(onerchithon_id)
+import html
+import os
+import base64
+from telethon.tl.functions.messages import ImportChatInviteRequest as Get
+from telethon.tl.types import MessageEntityMentionName
+from requests import get
+from telethon.tl.functions.photos import GetUserPhotosRequest
+from telethon.tl.functions.users import GetFullUserRequest
+from Arab import iqthon
+from Arab.core.logger import logging
+from ..Config import Config
+from ..core.managers import edit_or_reply, edit_delete
+from ..helpers import reply_id
+from ..sql_helper.globals import gvarstatus
+from . import spamwatch
+plugin_category = "@iqthon"
+LOGS = logging.getLogger(__name__)
+iqthon_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "╮•• مـعلومات الـشخص من بوت شيثون العرب"
+iqthonM = gvarstatus("CUSTOM_ALIVE_EMOJI") or "✦"
+iqthonF = gvarstatus("CUSTOM_ALIVE_FONT") or "★•┉ ┉ ┉ ┉ ┉ ┉  ┉ ┉ ┉ ┉•★"
 
 
 
-@sython.on(events.NewMessage(outgoing=False, pattern='.����� ������ (.*)'))
-async def OwnerStart(event):
-    pt = event.pattern_match.group(1) 
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-     send = await chithon.send_message(bot_username1, '/start')
-     sleep(2)
-    msg1 = await chithon.get_messages(bot_username1, limit=1)
-    await msg1[0].click(3)
-    sleep(4)
-    await chithon.send_message(bot_username1, pt)
-    sleep(4)
-    msg = await chithon.get_messages(bot_username1, limit=1)
-    await msg[0].forward_to(onerchithon_id)
-
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.����� ������ (.*)'))
-async def OwnerStart(event):
-    pt = event.pattern_match.group(1) 
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-     send = await chithon.send_message(bot_username2, '/start')
-     sleep(2)
-    msg1 = await chithon.get_messages(bot_username2, limit=1)
-    await msg1[0].click(3)
-    sleep(4)
-    await chithon.send_message(bot_username2, pt)
-    sleep(4)
-    msg = await chithon.get_messages(bot_username2, limit=1)
-    await msg[0].forward_to(onerchithon_id)
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.����� ����� (.*)'))
-async def OwnerStart(event):
-    pt = event.pattern_match.group(1) 
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-     send = await chithon.send_message(bot_username3, '/start')
-     sleep(2)
-    msg1 = await chithon.get_messages(bot_username3, limit=1)
-    await msg1[0].click(3)
-    sleep(4)
-    await chithon.send_message(bot_username3, pt)
-    sleep(4)
-    msg = await chithon.get_messages(bot_username3, limit=1)
-    await msg[0].forward_to(onerchithon_id)
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.����� ������ (.*)'))
-async def OwnerStart(event):
-    pt = event.pattern_match.group(1) 
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-     send = await chithon.send_message(bot_username4, '/start')
-     sleep(2)
-    msg1 = await chithon.get_messages(bot_username4, limit=1)
-    await msg1[0].click(3)
-    sleep(4)
-    await chithon.send_message(bot_username4, pt)
-    sleep(4)
-    msg = await chithon.get_messages(bot_username4, limit=1)
-    await msg[0].forward_to(onerchithon_id)
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.����� ���� (.*)'))
-async def OwnerStart(event):
-    pt = event.pattern_match.group(1) 
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-     send = await chithon.send_message(bot_username5, '/start')
-     sleep(2)
-    msg1 = await chithon.get_messages(bot_username5, limit=1)
-    await msg1[0].click(3)
-    sleep(4)
-    await chithon.send_message(bot_username5, pt)
-    sleep(4)
-    msg = await chithon.get_messages(bot_username5, limit=1)
-    await msg[0].forward_to(onerchithon_id)
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.����� ������� (.*)'))
-async def OwnerStart(event):
-    pt = event.pattern_match.group(1) 
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-     send = await chithon.send_message(bot_username7, '/start')
-     sleep(2)
-    msg1 = await chithon.get_messages(bot_username7, limit=1)
-    await msg1[0].click(3)
-    sleep(4)
-    await chithon.send_message(bot_username7, pt)
-    sleep(4)
-    msg = await chithon.get_messages(bot_username7, limit=1)
-    await msg[0].forward_to(onerchithon_id)
-
-
-
-@sython.on(events.NewMessage(outgoing=False, pattern=r'.������ (.*)'))
-async def OwnerStart(event):
-    await event.reply('���� ��� ������ �� ����� ������')
-    await event.edit('���� ����� ������ �� ����� ������')
-    pot = event.pattern_match.group(1)
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-        send = await chithon.send_message(pot, '/start')
-        sleep(4)
-    msg1 = await chithon.get_messages(pot, limit=1)
-    await msg1[0].click(6)
-    sleep(4)
-    msg = await chithon.get_messages(pot, limit=1)
-    await msg[0].forward_to(event.chat_id)
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.��� (.*)'))
-async def OwnerStart(event):
-    pot = event.pattern_match.group(1) 
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id:
-        await event.reply("���� ����� ������")
-        await event.edit("���� ����� ������")
-        joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-        channel_entity = await chithon.get_entity(pot)
-        await chithon.send_message(pot, '/start')
-        await asyncio.sleep(4)
-        msg0 = await chithon.get_messages(pot, limit=1)
-        await msg0[0].click(2)
-        await asyncio.sleep(4)
-        msg1 = await chithon.get_messages(pot, limit=1)
-        await msg1[0].click(0)
-        chs = 1
-        for i in range(100):
-            await asyncio.sleep(4)
-            list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1,                                                    offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-            msgs = list.messages[0]
-            if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                await chithon.send_message(event.chat_id, f"�� �������� �� ������� | SH")
-                break
-            url = msgs.reply_markup.rows[0].buttons[0].url
-            try:
-                try:
-                    await chithon(JoinChannelRequest(url))
-                except:
-                    bott = url.split('/')[-1]
-                    await chithon(ImportChatInviteRequest(bott))
-                msg2 = await chithon.get_messages(pot, limit=1)
-                await msg2[0].click(text='����')
-                chs += 1
-                await event.edit(f"�� �������� �� {chs} ����")
-            except:
-                msg2 = await chithon.get_messages(pot, limit=1)
-                await msg2[0].click(text='������')
-                chs += 1
-                await event.edit(f"������ ��� {chs}")
-        await chithon.send_message(event.chat_id, "�� �������� �� ������� | SH")
-
-
-@sython.on(events.NewMessage(outgoing=False, pattern='.������� (.*) (.*)'))
-async def OwnerStart(event):
-    while True:
+async def get_user_from_event(event):
+    if event.reply_to_msg_id:
+        previous_message = await event.get_reply_message()
+        user_object = await event.client.get_entity(previous_message.sender_id)
+    else:
+        user = event.pattern_match.group(1)
+        if user.isnumeric():
+            user = int(user)
+        if not user:
+            self_user = await event.client.get_me()
+            user = self_user.id
+        if event.message.entities:
+            probable_user_mention_entity = event.message.entities[0]
+            if isinstance(probable_user_mention_entity, MessageEntityMentionName):
+                user_id = probable_user_mention_entity.user_id
+                user_obj = await event.client.get_entity(user_id)
+                return user_obj
+        if isinstance(user, int) or user.startswith("@"):
+            user_obj = await event.client.get_entity(user)
+            return user_obj
         try:
-           pot = event.pattern_match.group(1)
-           numw = int(event.pattern_match.group(2))
-           sender = await event.get_sender()
-           if sender.id == onerchithon_id:
-               await event.reply(f"**? ���� ��� ���� ������ ������� \n? ��� ������� ��� �� ������ : {numw}\n? ������� �� ��� : @{pot}**")
-               joinu = await chithon(JoinChannelRequest('SHA_HM1'))
-               channel_entity = await chithon.get_entity(pot)
-               await chithon.send_message(pot, '**���� ��� ����� ������� ������ ���**')
-               await chithon.send_message(pot, '/start')
-               await asyncio.sleep(2)
-               msg0 = await chithon.get_messages(pot, limit=1)
-               await msg0[0].click(2)
-               await asyncio.sleep(2)
-               msg1 = await chithon.get_messages(pot, limit=1)
-               await msg1[0].click(0)
-               chs = 0
-               for i in range(100):
-                   await asyncio.sleep(2)
-                   list = await chithon(GetHistoryRequest(peer=channel_entity, limit=1,                                                            offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
-                   msgs = list.messages[0]
-                   if msgs.message.find('�� ���� ����� �� ����� ������ , �� ������ ������ ������ ������') != -1:
-                       await chithon.send_message(event.chat_id, f"**? ���� ��� ���� ������ ������� \n? ��� ������� ��� �� ������ : {numw}\n? ������� �� ��� : @{pot}**")
-                       break
-                   url = msgs.reply_markup.rows[0].buttons[0].url
-                   try:
-                       try:
-                           await chithon(JoinChannelRequest(url))
-                       except:
-                           syth = url.split('/')[-1]
-                           await chithon(ImportChatInviteRequest(syth))
-                       msg2 = await chithon.get_messages(pot, limit=1)
-                       await msg2[0].click(text='������')
-                       chs += 10
-                       await event.reply(f"**? ��� ������ �� ��� �������� {chs} ?**")
-                   except:
-                       msg2 = await chithon.get_messages(pot, limit=1)
-                       await msg2[0].click(text='������')
-                       chs += 0
-                       await event.reply(f"""**? ����� �� ���� ��� ���� �� ��� ��������
-? ����� ���� ���� ���� ��� �������
-? ����� ���� ��� ��� �����: {pot}**""")
-               await chithon.send_message(event.chat_id, f"**? ���� ���� ����� ����� \n? ��� ��� ����� �������� ��� {numw} �����**")
-               await asyncio.sleep(numw)
-        except Exception as e:
-            # ����� ����� ��� ��� ��� ���� �� ���
-           await asyncio.sleep(numw)
+            user_object = await event.client.get_entity(user)
+        except (TypeError, ValueError) as err:
+            await event.edit(str(err))
+            return None
+    return user_object
 
 
-@sython.on(events.NewMessage(outgoing=False, pattern=r'.����� �����'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-        await event.reply("� ���� ����� ����� ������ ..\n� ����� 1-2 �����  .")
-        await chithon.disconnect()
-        await chithon.send_message(event.chat_id, "�� ����� ����� ������ ")
+async def fetch_info(replied_user, event):
+    """Get details from the User object."""
+    FullUser = (await event.client(GetFullUserRequest(replied_user.id))).full_user
+    replied_user_profile_photos = await event.client(
+        GetUserPhotosRequest(user_id=replied_user.id, offset=42, max_id=0, limit=80)    )
+    replied_user_profile_photos_count = "لايـوجـد بروفـايـل"
+    dc_id = "Can't get dc id"
+    try:
+        replied_user_profile_photos_count = replied_user_profile_photos.count
+        dc_id = replied_user.photo.dc_id
+    except AttributeError:
+        pass
+    user_id = replied_user.id
+    first_name = replied_user.first_name
+    full_name = FullUser.private_forward_name
+    common_chat = FullUser.common_chats_count
+    username = replied_user.username
+    user_bio = FullUser.about
+    is_bot = replied_user.bot
+    restricted = replied_user.restricted
+    verified = replied_user.verified
+    photo = await event.client.download_profile_photo(     user_id,     Config.TMP_DOWNLOAD_DIRECTORY + str(user_id) + ".jpg",    download_big=True  )
+    first_name = (      first_name.replace("\u2060", "")
+        if first_name
+        else ("هذا المستخدم ليس له اسم أول")  )
+    full_name = full_name or first_name
+    username = "@{}".format(username) if username else ("لايـوجـد معـرف")
+    user_bio = "لاتـوجـد نبـذة" if not user_bio else user_bio
+    rotbat = "⌁ من مطورين السورس 𓄂𓆃 ⌁" if user_id == 1226408155 else ("⌁ العضـو 𓅫 ⌁")
+    rotbat = "⌁ مـالك الحساب 𓀫 ⌁" if user_id == (await event.client.get_me()).id and user_id != 1226408155  else rotbat
+    caption = f"<b> {iqthon_TEXT} </b>\n"
+    caption += f"ٴ{iqthonF} \n"
+    caption += f"<b> {iqthonM}╎الاسـم    ⇠ </b> {full_name}\n"
+    caption += f"<b> {iqthonM}╎المعـرف  ⇠ </b> {username}\n"
+    caption += f"<b> {iqthonM}╎الايـدي   ⇠ </b> <code>{user_id}</code>\n"
+    caption += f"<b> {iqthonM}╎الرتبـــه  ⇠ {rotbat} </b>\n"
+    caption += f"<b> {iqthonM}╎الصـور   ⇠ </b> {replied_user_profile_photos_count}\n"
+    caption += f"<b> {iqthonM}╎الحساب ⇠ </b> "
+    caption += f'<a href="tg://user?id={user_id}">{first_name}</a>'
+    caption += f"\n<b> {iqthonM}╎البايـو    ⇠ </b> {user_bio} \n"
+    caption += f"ٴ{iqthonF} "
+    return photo, caption
+
+@iqthon.iq_cmd(pattern="ايدي(?: |$)(.*)",
+    command=("ايدي", plugin_category),
+    info={
+        "header": "لـ عـرض معلومـات الشخـص",
+        "الاستـخـدام": " {tr}ايدي بالـرد او {tr}ايدي + معـرف/ايـدي الشخص",
+    },
+)
+async def who(event):
+    "Gets info of an user"
+    iqthon = await edit_or_reply(event, "⇆")
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
+    replied_user = await get_user_from_event(event)
+    try:
+        photo, caption = await fetch_info(replied_user, event)
+    except AttributeError:
+        return await edit_or_reply(iqthon, "**- لـم استطـع العثــور ع الشخــص**")
+    message_id_to_reply = event.message.reply_to_msg_id
+    if not message_id_to_reply:
+        message_id_to_reply = None
+    try:
+        await event.client.send_file(            event.chat_id,            photo,            caption=caption,            link_preview=False,            force_document=False,            reply_to=message_id_to_reply,            parse_mode="html",        )
+        if not photo.startswith("http"):
+            os.remove(photo)
+        await iqthon.delete()
+    except TypeError:
+        await iqthon.edit(caption, parse_mode="html")
 
 
-@sython.on(events.NewMessage(outgoing=False, pattern=r'.������� �������'))
-async def OwnerStart(event): 
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id:
-        send = await chithon.send_message(bot_username, '/start')
-        sleep(2)
-    msg1 = await chithon.get_messages(bot_username, limit=1)
-    await msg1[0].click(5)
-    sleep(2)
-    msg = await chithon.get_messages(bot_username, limit=1)
-    await msg[0].forward_to(onerchithon_id)
-@sython.on(events.NewMessage(outgoing=False, pattern=r'.������� ������'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == onerchithon_id :
-        send = await chithon.send_me
 
 chithon.start()
 @sython.on(events.NewMessage)
